@@ -4,9 +4,6 @@ async function main (username) {
 	const url = `https://api.github.com/graphql`
 	const token = process.env.TOKEN;
 
-	console.log(process.env.TOKEN);
-	/*
-
 	const query = `
 	query($userName:String!) {
 	  user(login: $userName){
@@ -47,7 +44,6 @@ async function main (username) {
 	const resJSON = await res.json();
 
 	console.log(resJSON);
-	*/
 }
 
 main("rekky1aws");
