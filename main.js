@@ -69,4 +69,7 @@ async function main(username) {
   }
 }
 
-main("rekky1aws");
+// MAIN
+console.log(process.argv);
+const username = process.argv[2];
+main(username);
