@@ -1,10 +1,10 @@
 process.loadEnvFile("./.env");
 
-async function main (username) {
-	const url = `https://api.github.com/graphql`
-	const token = process.env.TOKEN;
+async function main(username) {
+  const url = `https://api.github.com/graphql`
+  const token = process.env.TOKEN;
 
-	const query = `
+  const query = `
 	query($userName:String!) {
 	  user(login: $userName){
 	    contributionsCollection {
@@ -22,28 +22,28 @@ async function main (username) {
 	}
 	`;
 
-	const variables = `
+  const variables = `
 		{
 			"userName": "${username}"
 		}
 	`;
 
-	const body = {
-		query,
-		variables
-	}
+  const body = {
+    query,
+    variables
+  }
 
-	const res = await fetch(url, {
-		method: 'POST',
-		headers: {
-			Authorieation: `Bearer ${token}`
-		},
-		body: JSON.stringify(body)
-	});
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `bearer ${token}`
+    },
+    body: JSON.stringify(body)
+  });
 
-	const resJSON = await res.json();
+  const resJSON = await res.json();
 
-	console.log(resJSON);
+  console.log(resJSON);
 }
 
 main("rekky1aws");
