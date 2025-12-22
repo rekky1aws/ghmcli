@@ -42,8 +42,31 @@ async function main(username) {
   });
 
   const resJSON = await res.json();
+  const weeks = resJSON.data.user.contributionsCollection.contributionCalendar.weeks;
+  /* forEach((elt) => {
+    console.log(elt);
+  }); */
 
-  console.log(resJSON);
+  for (let i = 0; i < 7; i++) {
+    let commitLine = "";
+    weeks.forEach((week) => {
+      if (week.contributionDays.length > i) {
+        let spacing = ""
+        let spacingSize = 0;
+        week.contributionDays.forEach((day) => {
+          if (`${day.contributionCount}`.length > spacingSize) {
+            spacingSize = `${day.contributionCount}`.length;
+          }
+        });
+        for (let j = 0; j < spacingSize - `${week.contributionDays[i].contributionCount}`.length + 1; j++) {
+          spacing = `${spacing} `;
+        }
+        commitLine = `${commitLine}${week.contributionDays[i].contributionCount}${spacing}`;
+      }
+    });
+
+    console.log(commitLine);
+  }
 }
 
 main("rekky1aws");
