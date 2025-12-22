@@ -1,12 +1,9 @@
 # TODO
-
- + Fix error message when trying to access API
-Error :
-```javascript
-{
-  message: "API rate limit exceeded for 87.88.94.135. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-  documentation_url: 'https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting'
-}
-```
-
+ + Add username verification
+  + Throw error if no username
+  + Throw error if username not recognized by github.
  + Process Data when retrieved
+  + Add 0 for every passed day without a commit
+  + Add colors
+   + red or grey for a day without a commit
+ + Better format
