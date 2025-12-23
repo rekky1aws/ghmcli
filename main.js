@@ -70,6 +70,5 @@ async function main(username) {
 }
 
 // MAIN
-console.log(process.argv);
 const username = process.argv[2];
 main(username);
