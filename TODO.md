@@ -1,6 +1,6 @@
 # TODO
  + Add username verification
-  + Throw error if no username
+  + Throw error and explain if no username
   + Throw error if username not recognized by github.
  + Process Data when retrieved
   + Add colors
