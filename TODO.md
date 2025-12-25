@@ -6,3 +6,7 @@
   + Add colors
    + red or grey for a day without a commit
  + Better format
+
+ + Add options
+  + Show months
+  + Previous dates without activity
