@@ -10,3 +10,6 @@
  + Add options
   + Show months
   + Previous dates without activity
+
+ + Shebang + chmod to execute without "nodejs" at the begginning
+  + Make argument finding more variation proof (argv position to find the username).
