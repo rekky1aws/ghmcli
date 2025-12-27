@@ -47,8 +47,15 @@ async function main(username) {
     console.log(elt);
   }); */
 
+  const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   for (let i = 0; i < 7; i++) {
     let commitLine = "";
+    if ((i + 1) % 2 == 0) {
+      commitLine = `${weekDays[i]} | `;
+    } else {
+      commitLine = "    | ";
+    }
     weeks.forEach((week) => {
       if (week.contributionDays.length > i) {
         let spacing = ""
