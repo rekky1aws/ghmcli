@@ -6,3 +6,5 @@
   + Add colors
    + red or grey for a day without a commit
  + Better format
+
+ + Complete rework with npm packages
