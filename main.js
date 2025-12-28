@@ -60,6 +60,7 @@ async function main(username) {
       if (week.contributionDays.length > i) {
         let spacing = ""
         let spacingSize = 0;
+        let colorModifier = "";
         week.contributionDays.forEach((day) => {
           if (`${day.contributionCount}`.length > spacingSize) {
             spacingSize = `${day.contributionCount}`.length;
@@ -68,7 +69,10 @@ async function main(username) {
         for (let j = 0; j < spacingSize - `${week.contributionDays[i].contributionCount}`.length + 1; j++) {
           spacing = `${spacing} `;
         }
-        commitLine = `${commitLine}${week.contributionDays[i].contributionCount}${spacing}`;
+        if (week.contributionDays[i].contributionCount == 0) {
+          colorModifier = "\x1b[31m";
+        }
+        commitLine = `${commitLine}${colorModifier}${week.contributionDays[i].contributionCount}\x1b[0m${spacing}`;
       }
     });
 
