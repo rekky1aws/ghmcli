@@ -6,6 +6,7 @@
   + Add colors
    + red or grey for a day without a commit
  + Better format
+  + Detect terminal size and don't display something larger than the width
 
  + Add options
   + Show months
