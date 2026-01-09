@@ -82,4 +82,11 @@ async function main(username) {
 
 // MAIN
 const username = process.argv[2];
+
+if (!username) {
+  console.error("No username found. A GitHub username should be given as an argument.");
+  process.exit();
+}
+
 main(username);
+
