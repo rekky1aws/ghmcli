@@ -1,3 +1,5 @@
+#!node
+
 process.loadEnvFile("./.env");
 
 async function main(username) {
